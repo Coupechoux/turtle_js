@@ -3,91 +3,91 @@
 
 // JavaScript statements
 // =====================================================================================
-var wait_time = 10;
-var total_time = 0;
+let waitTime = 10;
+let totalTime = 0;
 // =====================================================================================
 
 function forward(length) {
-	setTimeout(() => {turtle.forward(length);}, total_time);
-	total_time += wait_time;
+	setTimeout(() => {turtle.forward(length);}, totalTime);
+	totalTime += waitTime;
 }
 
 function left(angle) {
-	setTimeout(() => {turtle.left(angle);}, total_time);
-	total_time += wait_time;
+	setTimeout(() => {turtle.left(angle);}, totalTime);
+	totalTime += waitTime;
 }
 
 function right(angle) {
-	setTimeout(() => {turtle.right(angle);}, total_time);
-	total_time += wait_time;
+	setTimeout(() => {turtle.right(angle);}, totalTime);
+	totalTime += waitTime;
 }
 
 function backward(angle) {
-	setTimeout(() => {turtle.backward(angle);}, total_time);
-	total_time += wait_time;
+	setTimeout(() => {turtle.backward(angle);}, totalTime);
+	totalTime += waitTime;
 }
 
-function change_color(col) {
-	setTimeout(() => {turtle.change_color(col);}, total_time);
-	total_time += wait_time;
+function changeColor(col) {
+	setTimeout(() => {turtle.changeColor(col);}, totalTime);
+	totalTime += waitTime;
 }
 
 function down() {
-	setTimeout(turtle.down, total_time);
-	total_time += wait_time;
+	setTimeout(turtle.down, totalTime);
+	totalTime += waitTime;
 }
 
 function up() {
-	setTimeout(turtle.up, total_time);
-	total_time += wait_time;
+	setTimeout(turtle.up, totalTime);
+	totalTime += waitTime;
 }
 
-function set_pos(x,y) {
-	setTimeout(() => {turtle.set_pos(x,y);}, total_time);
-	total_time += wait_time;
+function setPos(x,y) {
+	setTimeout(() => {turtle.setPos(x,y);}, totalTime);
+	totalTime += waitTime;
 }
 
-function set_line_width(n) {
-	setTimeout(() => {turtle.set_line_width(n);}, total_time);
-	total_time += wait_time;
+function setLineWidth(n) {
+	setTimeout(() => {turtle.setLineWidth(n);}, totalTime);
+	totalTime += waitTime;
 }
 
-function arc_left(radius, angle) {
-	setTimeout(() => {turtle.arc_left(radius,angle);}, total_time);
-	total_time += wait_time;
+function arcLeft(radius, angle) {
+	setTimeout(() => {turtle.arcLeft(radius,angle);}, totalTime);
+	totalTime += waitTime;
 }
 
-function arc_right(radius, angle) {
-	setTimeout(() => {turtle.arc_right(radius,angle);}, total_time);
-	total_time += wait_time;
+function arcRight(radius, angle) {
+	setTimeout(() => {turtle.arcRight(radius,angle);}, totalTime);
+	totalTime += waitTime;
 }
 
-function face_left() {
-	setTimeout(() => {turtle.angleInRadians=-Math.PI/2;}, total_time);
-	total_time += wait_time;
+function faceLeft() {
+	setTimeout(() => {turtle.angleInRadians=-Math.PI/2;}, totalTime);
+	totalTime += waitTime;
 }
 
-function face_right() {
-	setTimeout(() => {turtle.angleInRadians=Math.PI/2;}, total_time);
-	total_time += wait_time;
+function faceRight() {
+	setTimeout(() => {turtle.angleInRadians=Math.PI/2;}, totalTime);
+	totalTime += waitTime;
 }
 
-function face_up() {
-	setTimeout(() => {turtle.angleInRadians=Math.PI;}, total_time);
-	total_time += wait_time;
+function faceUp() {
+	setTimeout(() => {turtle.angleInRadians=Math.PI;}, totalTime);
+	totalTime += waitTime;
 }
 
-function face_down() {
-	setTimeout(() => {turtle.angleInRadians=0;}, total_time);
-	total_time += wait_time;
+function faceDown() {
+	setTimeout(() => {turtle.angleInRadians=0;}, totalTime);
+	totalTime += waitTime;
 }
 
-function log_pen_status() {
-	setTimeout(() => {turtle.logPenStatus();},total_time);
-	total_time += wait_time;
+function logPenStatus() {
+	setTimeout(() => {turtle.logPenStatus();},totalTime);
+	totalTime += waitTime;
 }
 
-function shift_color(x) {
-    setTimeout(() => {turtle.shift_color(x);},total_time);
-    total_time += wait_time;
+function shiftColor(x) {
+    setTimeout(() => {turtle.shiftColor(x);},totalTime);
+    totalTime += waitTime;
 }

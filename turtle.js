@@ -1,7 +1,7 @@
 ﻿"use strict";
 // JavaScript statements
 // =====================================================================================
-var color = {
+let color = {
 	white: "#ffffff",
 	black: "#000000",
 	red: "#ff0000",
@@ -12,7 +12,7 @@ var color = {
 	aqua: "#00ffff"
 };
 
-var turtle = {
+let turtle = {
 	x: 0,
 	y: 0,
 	angleInRadians: 0,
@@ -22,7 +22,7 @@ var turtle = {
 	col:0
 };
 
-var canvas = document.getElementById('myDrawing');
+let canvas = document.getElementById('myDrawing');
 
 if (canvas && canvas.getContext) { // does the browser support 'canvas'?
 	turtle.ct = canvas.getContext("2d"); // get drawing context
@@ -42,7 +42,7 @@ turtle.logPenStatus = function () {
 
 turtle.forward = function (length) {
 	// console.log('forward(' + length + ')');
-	var x0 = this.x,
+	let x0 = this.x,
 		y0 = this.y;
 	this.x += length * Math.sin(this.angleInRadians);
 	this.y += length * Math.cos(this.angleInRadians);
@@ -62,82 +62,82 @@ turtle.forward = function (length) {
 	return this;
 };
 
-turtle.arc_left = function(radius, arc) {
-	var x0 = this.x,
+turtle.arcLeft = function(radius, arc) {
+	let x0 = this.x,
 		y0 = this.y;
-	var theta0 = this.angleInRadians;
-	var xc = x0 + radius*Math.cos(theta0);
-	var yc = y0 - radius*Math.sin(theta0);
-	var start_angle = theta0 - Math.PI;
+	let theta0 = this.angleInRadians;
+	let xc = x0 + radius*Math.cos(theta0);
+	let yc = y0 - radius*Math.sin(theta0);
+	let startAngle = theta0 - Math.PI;
 	arc = arc * Math.PI / 180;
-	var end_angle = start_angle + arc;
+	let endAngle = startAngle + arc;
 	
 	if(arc < 0) {
-		end_angle = Math.PI - theta0;
-		start_angle = end_angle + arc;
+		endAngle = Math.PI - theta0;
+		startAngle = endAngle + arc;
 	}
 	
 	if(this.penDown) {
 		this.ct.beginPath();
 		this.ct.lineWidth = this.lineWidth;
 		this.ct.strokeStyle = this.penColor;
-		for(var angle = start_angle ; angle <= end_angle ; angle += 0.001) {
-			var x = xc + radius*Math.cos(angle);
-			var y = yc - radius*Math.sin(angle);
+		for(let angle = startAngle ; angle <= endAngle ; angle += 0.001) {
+			let x = xc + radius*Math.cos(angle);
+			let y = yc - radius*Math.sin(angle);
 			this.ct.lineTo(x,y);
 		}
 		this.ct.stroke();
 	}
 	
-	var angle = end_angle;
+	let angle = endAngle;
 	if(arc < 0) {
-		angle = start_angle;
+		angle = startAngle;
 	}
 	this.x = xc + radius*Math.cos(angle);
 	this.y = yc - radius*Math.sin(angle);
 	this.angleInRadians += arc;
 	
-	console.log(x0,this.x, y0, this.y, 180*angle/Math.PI);
+	//console.log(x0,this.x, y0, this.y, 180*angle/Math.PI);
 	
 	return this;
 }
 
-turtle.arc_right = function(radius, arc) {
-	var x0 = this.x,
+turtle.arcRight = function(radius, arc) {
+	let x0 = this.x,
 		y0 = this.y;
-	var theta0 = this.angleInRadians;
-	var xc = x0 - radius*Math.cos(theta0);
-	var yc = y0 + radius*Math.sin(theta0);
-	var start_angle = theta0;
+	let theta0 = this.angleInRadians;
+	let xc = x0 - radius*Math.cos(theta0);
+	let yc = y0 + radius*Math.sin(theta0);
+	let startAngle = theta0;
 	arc = arc * Math.PI / 180;
-	var end_angle = start_angle - arc;
+	let endAngle = startAngle - arc;
 	
 	if(arc < 0) {
-		end_angle = theta0;
-		start_angle = end_angle - arc;
+		endAngle = theta0;
+		startAngle = endAngle - arc;
 	}
 	
 	if(this.penDown) {
 		this.ct.beginPath();
 		this.ct.lineWidth = this.lineWidth;
 		this.ct.strokeStyle = this.penColor;
-		for(var angle = start_angle ; angle >= end_angle ; angle -= 0.001) {
-			var x = xc + radius*Math.cos(angle);
-			var y = yc - radius*Math.sin(angle);
+		for(let angle = startAngle ; angle >= endAngle ; angle -= 0.001) {
+			let x = xc + radius*Math.cos(angle);
+			let y = yc - radius*Math.sin(angle);
 			this.ct.lineTo(x,y);
 		}
 		this.ct.stroke();
 	}
 	
-	var angle = end_angle;
+	let angle = endAngle;
 	if(arc < 0) {
-		angle = start_angle;
+		angle = startAngle;
 	}
 	this.x = xc + radius*Math.cos(angle);
 	this.y = yc - radius*Math.sin(angle);
 	this.angleInRadians -= arc;
 	
-	console.log(x0,this.x, y0, this.y, 180*angle/Math.PI);
+	//console.log(x0,this.x, y0, this.y, 180*angle/Math.PI);
 	
 	return this;
 }
@@ -167,8 +167,7 @@ turtle.angle = function () {
 	return this.angleInRadians * 180.0 / Math.PI;
 };
 
-turtle.change_color = function (col) {
-	// console.log('change_color(' + col + ')');
+turtle.changeColor = function (col) {
 	turtle.penColor = col;
 }
 
@@ -182,19 +181,19 @@ turtle.up = function () {
 	turtle.penDown = false;
 }
 
-turtle.set_pos = function (x,y) {
+turtle.setPos = function (x,y) {
 	// console.log('set_pos(' + x + ',' + y + ')');
 	turtle.x = x;
 	turtle.y = y;
 }
 
-turtle.set_line_width = function(n) {
+turtle.setLineWidth = function(n) {
 	// console.log('set_line_width(' + n + ')');
 	turtle.lineWidth = n;
 }
 
 
-function color_scale(n) {
+function colorScale(n) {
     let k = Math.floor((n%(6*255))/255);
     let r = 0, g = 0, b = 0;
     if(k == 0) {
@@ -218,12 +217,12 @@ function color_scale(n) {
     }
     let c= r*256*256+g*256+b;
     let col = "#" + c.toString(16).padStart(6,'0');
-    console.log(n,r,g,b,c,col);
+    //console.log(n,r,g,b,c,col);
     return col;
 }
 
-turtle.shift_color = function(x) {
+turtle.shiftColor = function(x) {
     let n = Math.floor(x*255*6);
     turtle.col = (turtle.col+n)%(255*6);
-    turtle.change_color(color_scale(turtle.col));
+    turtle.changeColor(colorScale(turtle.col));
 }

@@ -17,53 +17,65 @@
 	<canvas id="myDrawing" width="600" height="600"></canvas>
 </div>
 	
-<script type="text/javascript" src="turtle.js"></script>
-<script type="text/javascript" src="anim.js"></script>
-<!-- <script type="text/javascript" src="examples.js"></script> -->
+<script src="turtle.js"></script>
+<script src="anim.js"></script>
 
-<script type="text/javascript">
+<script>
 
 // Write your code here.
 
 // Change the turtle position
-set_pos(300,300);
+setPos(300,300);
 
 // Set the line width
-//set_line_width(5);
+setLineWidth(5);
 
 // Change the color 
 // Predefined colors are : white, black, red, green, blue, yellow, fuchsia, aqua ; all with the "color." prefix
-// change_color(color.blue);
+changeColor(color.blue);
 // You can also specify a color with its RGB notation
 // change_color("#2DC567");
+// Another possibility is to use :
+// shift_color(0.25); // -> passe en mode "arc-en-ciel" et se décale de 25%
 
 // Move forward by an amount of pixel
-// forward(50);
+forward(50);
 
+changeColor("#2DC567");
 // Move backward by an amount of pixel
-// backward(10);
+backward(10);
 
 // Turn right by an angle
-// right(90);
+right(90);
 
 // Turn left by an angle
-// left(140);
+left(140);
 
 // Face to a side
-//face_left(); // face_right, face_up, face_down
+faceLeft(); // face_right, face_up, face_down
 
 // Draw an arc on the turtle's left, given a radius and an angle
-//arc_left(200,90);
+arcLeft(50,90);
 
 // Draw an arc on the turtle's right, given a radius and an angle
-//arc_right(200,90);
+arcRight(200,90);
 
 // Stop the writing
-// up();
+up();
+
+backward(200);
 
 // Start the writing
-// down();
+down();
 
+right(135);
+forward(100);
+
+// Shift the colors, rainbow
+shiftColor(0); // First time, activation of rainbow mode
+shiftColor(0.75);
+right(30);
+forward(25);
 </script>
 
 </body>
