@@ -182,13 +182,13 @@ turtle.up = function () {
 }
 
 turtle.setPos = function (x,y) {
-	// console.log('set_pos(' + x + ',' + y + ')');
+	// console.log('setPos(' + x + ',' + y + ')');
 	turtle.x = x;
 	turtle.y = y;
 }
 
 turtle.setLineWidth = function(n) {
-	// console.log('set_line_width(' + n + ')');
+	// console.log('setLineWidth(' + n + ')');
 	turtle.lineWidth = n;
 }
 
